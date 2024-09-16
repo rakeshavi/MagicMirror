@@ -6,3 +6,6 @@
 /coverage
 package-lock.json
 **.ics
+
+.gitignore
+start.sh

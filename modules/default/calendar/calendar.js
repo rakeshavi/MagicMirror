@@ -125,7 +125,8 @@ Module.register("calendar", {
 				broadcastPastEvents: calendar.broadcastPastEvents,
 				selfSignedCert: calendar.selfSignedCert,
 				excludedEvents: calendar.excludedEvents,
-				fetchInterval: calendar.fetchInterval
+				fetchInterval: calendar.fetchInterval,
+				calendar_name: calendar.calendar_name
 			};
 
 			if (typeof calendar.symbolClass === "undefined" || calendar.symbolClass === null) {
@@ -736,7 +737,8 @@ Module.register("calendar", {
 			timeClass: calendarConfig.timeClass,
 			auth: auth,
 			broadcastPastEvents: calendarConfig.broadcastPastEvents || this.config.broadcastPastEvents,
-			selfSignedCert: calendarConfig.selfSignedCert || this.config.selfSignedCert
+			selfSignedCert: calendarConfig.selfSignedCert || this.config.selfSignedCert,
+			calendar_name: calendarConfig.calendar_name
 		});
 	},
 

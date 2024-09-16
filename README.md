@@ -1,3 +1,11 @@
+## Modules Used for This Magic Mirror:
+
+1. [MTA](https://github.com/elaniobro/MMM-nyc-transit)
+2. [Facial Recognition](https://github.com/normyx/MMM-Facial-Recognition-OCV3)
+3.
+
+---
+
 ![MagicMirror²: The open source modular smart mirror platform. ](.github/header.png)
 
 <p style="text-align: center">

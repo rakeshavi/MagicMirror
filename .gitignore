@@ -81,3 +81,9 @@ Temporary Items
 *.orig
 *.rej
 *.bak
+
+## environment variables
+.env
+
+# python environment
+env/

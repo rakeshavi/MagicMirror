@@ -7,6 +7,7 @@ const CalendarFetcherUtils = require("./calendarfetcherutils");
 /**
  *
  * @param {string} url The url of the calendar to fetch
+ * @param {string} calendar_name The name of the calendar to fetch
  * @param {number} reloadInterval Time in ms the calendar is fetched again
  * @param {string[]} excludedEvents An array of words / phrases from event titles that will be excluded from being shown.
  * @param {number} maximumEntries The maximum number of events fetched.
@@ -16,7 +17,7 @@ const CalendarFetcherUtils = require("./calendarfetcherutils");
  * @param {boolean} selfSignedCert If true, the server certificate is not verified against the list of supplied CAs.
  * @class
  */
-const CalendarFetcher = function (url, reloadInterval, excludedEvents, maximumEntries, maximumNumberOfDays, auth, includePastEvents, selfSignedCert) {
+const CalendarFetcher = function (url, calendar_name, reloadInterval, excludedEvents, maximumEntries, maximumNumberOfDays, auth, includePastEvents, selfSignedCert) {
 	let reloadTimer = null;
 	let events = [];
 
@@ -100,7 +101,7 @@ const CalendarFetcher = function (url, reloadInterval, excludedEvents, maximumEn
 	 * Broadcast the existing events.
 	 */
 	this.broadcastEvents = function () {
-		Log.info(`Calendar-Fetcher: Broadcasting ${events.length} events from ${url}.`);
+		Log.info(`Calendar-Fetcher: Broadcasting ${events.length} events from ${calendar_name}.`);
 		eventsReceivedCallback(this);
 	};
 
@@ -134,6 +135,10 @@ const CalendarFetcher = function (url, reloadInterval, excludedEvents, maximumEn
 	 */
 	this.events = function () {
 		return events;
+	};
+
+	this.calendar_name = function () {
+		return calendar_name;
 	};
 };
 
